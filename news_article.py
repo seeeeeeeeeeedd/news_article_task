@@ -1,7 +1,12 @@
 class NewsArticle:
     def __init__(self, title: str, author: str):
-        self.__title = title
-        self.__author = author
+        is_valid = self.__is_valid_title_and_author(title, author)
+        if is_valid:
+            self.__title = title
+            self.__author = author
+        else:
+            self.__title = 'Без названия'
+            self.__author = 'Неизвестный автор'
 
     def __is_valid_title_and_author(self, title: str, author: str) -> bool:
         if isinstance(title, str) and isinstance(author, str):
