@@ -13,3 +13,6 @@ class NewsArticle:
             if title.strip() and author.strip():
                 return True
         return False
+
+    def print_article(self):
+        print(f'Статья {self.__title}, опубликована автором {self.__author}')
