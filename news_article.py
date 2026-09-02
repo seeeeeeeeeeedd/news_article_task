@@ -14,5 +14,5 @@ class NewsArticle:
                 return True
         return False
 
-    def print_article(self):
-        print(f'Статья {self.__title}, опубликована автором {self.__author}')
+    def print(self):
+        print(f'Статья "{self.__title}", опубликована автором {self.__author}')
