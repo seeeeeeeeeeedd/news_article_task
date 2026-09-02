@@ -17,6 +17,12 @@ class NewsPortal:
             print('Ошибка. Некорректные данные')
             return
 
+    def show_published_articles(self):
+        for article in self.__published_articles:
+            current_title = article.get_title()
+            current_author = article.get_author()
+            print(f'Статья "{current_title}", автор: {current_author}')
+
     def __is_valid_article(self, article):
         if not isinstance(article, NewsArticle):
             return False
