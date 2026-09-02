@@ -11,3 +11,6 @@ news_portal.publish_article(news_article2)
 
 news_article3 = NewsArticle('Дорога домой', 23)
 news_portal.publish_article(news_article3)
+
+print()
+news_portal.show_published_articles()
