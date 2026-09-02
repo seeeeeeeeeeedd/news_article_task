@@ -17,3 +17,5 @@ class NewsPortal:
 
         if not isinstance(article, NewsArticle):
             return False
+        else:
+            return True
