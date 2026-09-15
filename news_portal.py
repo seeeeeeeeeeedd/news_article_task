@@ -34,6 +34,14 @@ class NewsPortal:
             print('Ошибка. Некорректные данные')
             return
 
+    def find_author_by_name(self, name: str) -> Author | None:
+        for author in self.__authors:
+            current_author_name = author.get_name()
+
+            if current_author_name == name:
+                return author
+        return None
+
     def __is_valid_author(self, author):
         if not isinstance(author, Author):
             return False
