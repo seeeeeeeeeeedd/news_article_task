@@ -38,7 +38,7 @@ class NewsPortal:
         for author in self.__authors:
             current_author_name = author.get_name()
 
-            if current_author_name == name:
+            if current_author_name.lower() == name.lower():
                 return author
         return None
 
