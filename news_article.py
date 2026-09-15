@@ -3,7 +3,7 @@ class NewsArticle:
         is_valid = self.__is_valid_title_and_author(title, author)
 
         if is_valid:
-            self.__title = title
+            self.__title = title.capitalize()
             self.__author = author
         else:
             self.__title = 'Без названия'
