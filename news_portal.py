@@ -25,6 +25,11 @@ class NewsPortal:
             current_author = article.get_author()
             print(f'Статья "{current_title}", автор: {current_author}')
 
+    def show_authors(self):
+        for author in self.__authors:
+            current_author = author.get_name()
+            print(current_author)
+
     def add_author(self, author):
         is_valid_author = self.__is_valid_author(author)
 
