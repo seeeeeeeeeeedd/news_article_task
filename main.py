@@ -55,7 +55,7 @@ while is_program_running:
         elif user_number == SHOW_ALL_AUTHORS_COMMAND:
             news_portal.show_authors()
         elif user_number == SHOW_ARTICLES_BY_AUTHOR_COMMAND:
-            user_author_name = input('Введи имя автора для поиска: ')
+            user_author_name = input('Укажите имя автора для поиска: ')
             news_portal.show_articles_by_author(user_author_name)
         elif user_number == EXIT_COMMAND:
             print()

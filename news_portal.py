@@ -28,7 +28,7 @@ class NewsPortal:
     def show_authors(self):
         for author in self.__authors:
             current_author = author.get_name()
-            print(f'Авторы: {current_author}')
+            print(f'Автор {current_author}')
 
     def add_author(self, author):
         is_valid_author = self.__is_valid_author(author)
