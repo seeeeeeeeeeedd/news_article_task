@@ -47,6 +47,18 @@ class NewsPortal:
                 return author
         return None
 
+    def show_articles_by_author(self, search_author):
+        is_article_found = False
+
+        for article in self.__published_articles:
+            current_author_name = article.get_author()
+
+            if current_author_name.lower() == search_author.lower():
+                print(article.get_title())
+                is_article_found = True
+        if not is_article_found:
+            print('Совпадений не найдено')
+
     def __is_valid_author(self, author):
         if not isinstance(author, Author):
             return False
