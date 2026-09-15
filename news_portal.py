@@ -28,7 +28,7 @@ class NewsPortal:
     def show_authors(self):
         for author in self.__authors:
             current_author = author.get_name()
-            print(current_author)
+            print(f'Авторы: {current_author}')
 
     def add_author(self, author):
         is_valid_author = self.__is_valid_author(author)
@@ -54,8 +54,10 @@ class NewsPortal:
             current_author_name = article.get_author()
 
             if current_author_name.lower() == search_author.lower():
-                print(article.get_title())
+                current_title = article.get_title()
+                print(f'{current_title}')
                 is_article_found = True
+
         if not is_article_found:
             print('Совпадений не найдено')
 
