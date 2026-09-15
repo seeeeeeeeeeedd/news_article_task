@@ -1,3 +1,6 @@
+from news_article import NewsArticle
+
+
 class Author:
     def __init__(self, name: str):
         is_valid = self.__is_valid_name(name)
@@ -15,3 +18,7 @@ class Author:
             if name.strip():
                 return True
         return False
+
+    def create_article(self, title: str):
+        article = NewsArticle(title, self.get_name())
+        return article
