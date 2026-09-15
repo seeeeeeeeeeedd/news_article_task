@@ -1,14 +1,16 @@
 from news_article import NewsArticle
+from author import Author
 
 
 class NewsPortal:
     def __init__(self):
         self.__published_articles = []
+        self.__authors = []
 
     def publish_article(self, article):
-        is_valid = self.__is_valid_article(article)
+        is_valid_article = self.__is_valid_article(article)
 
-        if is_valid:
+        if is_valid_article:
             current_title = article.get_title()
             current_author = article.get_author()
             print(f'Статья "{current_title}", опубликована автором {current_author}')
@@ -23,8 +25,21 @@ class NewsPortal:
             current_author = article.get_author()
             print(f'Статья "{current_title}", автор: {current_author}')
 
+    def add_author(self, author):
+        is_valid_author = self.__is_valid_author(author)
+
+        if is_valid_author:
+            self.__authors.append(author)
+        else:
+            print('Ошибка. Некорректные данные')
+            return
+
+    def __is_valid_author(self, author):
+        if not isinstance(author, Author):
+            return False
+        return True
+
     def __is_valid_article(self, article):
         if not isinstance(article, NewsArticle):
             return False
-        else:
-            return True
+        return True
