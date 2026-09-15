@@ -13,7 +13,7 @@ class NewsPortal:
         if is_valid_article:
             current_title = article.get_title()
             current_author = article.get_author()
-            print(f'Статья "{current_title}", опубликована автором {current_author}')
+            print(f'Статья "{current_title}", опубликована автором - {current_author}')
             self.__published_articles.append(article)
         else:
             print('Ошибка. Некорректные данные')
@@ -23,7 +23,7 @@ class NewsPortal:
         for article in self.__published_articles:
             current_title = article.get_title()
             current_author = article.get_author()
-            print(f'Статья "{current_title}", автор: {current_author}')
+            print(f'Статья "{current_title}", автор - {current_author}')
 
     def show_authors(self):
         for author in self.__authors:
@@ -55,7 +55,7 @@ class NewsPortal:
 
             if current_author_name.lower() == search_author.lower():
                 current_title = article.get_title()
-                print(f'{current_title}')
+                print(f'Статьи: "{current_title}"')
                 is_article_found = True
 
         if not is_article_found:
