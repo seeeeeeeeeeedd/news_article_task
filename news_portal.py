@@ -62,11 +62,7 @@ class NewsPortal:
             print('Совпадений не найдено')
 
     def __is_valid_author(self, author):
-        if not isinstance(author, Author):
-            return False
-        return True
+        return isinstance(author, Author)
 
     def __is_valid_article(self, article):
-        if not isinstance(article, NewsArticle):
-            return False
-        return True
+        return isinstance(article, NewsArticle)
