@@ -7,13 +7,14 @@ class NewsPortal:
         self.__published_articles = []
         self.__authors = []
 
-    def publish_article(self, article):
-        is_valid_article = self.__is_valid_article(article)
+    def publish_article(self, author, title, content):
+        is_valid_author = self.__is_valid_author(author)
 
-        if is_valid_article:
+        if is_valid_author:
+            article = author.create_article(title, content)
             current_title = article.get_title()
-            current_author = article.get_author().get_name()
-            print(f'Статья "{current_title}", опубликована автором - {current_author}')
+            current_author_name = author.get_name()
+            print(f'Статья "{current_title}", опубликована автором - {current_author_name}')
             self.__published_articles.append(article)
         else:
             print('Ошибка. Некорректные данные')
