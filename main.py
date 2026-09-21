@@ -16,13 +16,16 @@ commands = {
 news_portal = NewsPortal()
 
 is_program_running = True
+
 while is_program_running:
 
     print()
+
     for command_number, command in commands.items():
         print(f'{command_number}: {command}')
 
     print()
+
     user_number = input('Выберете действие и укажите его номер: ')
 
     if user_number in commands.keys():
@@ -45,10 +48,8 @@ while is_program_running:
             if current_author == None:
                 current_author = Author(user_author_name)
                 news_portal.add_author(current_author)
-                print()
                 print('Автор успешно добавлен')
             else:
-                print()
                 print('Такой автор уже существует')
         elif user_number == SHOW_ALL_ARTICLES_COMMAND:
             news_portal.show_published_articles()
@@ -58,9 +59,12 @@ while is_program_running:
             user_author_name = input('Укажите имя автора для поиска: ')
             news_portal.show_articles_by_author(user_author_name)
         elif user_number == EXIT_COMMAND:
+
             print()
+
             print('Выход из программы.')
             is_program_running = False
     else:
         print()
+
         print('Такой команды не существует. Попробуйте снова')
