@@ -7,11 +7,12 @@ commands = {
     '3': 'Посмотреть все статьи',
     '4': 'Посмотреть всех авторов',
     '5': 'Посмотреть все статьи определенного автора',
+    '6': 'Изменить имя автора',
     '0': 'Выйти из программы'
 }
 
 (CREATE_AND_PUBLISH_ARTICLE_COMMAND, ADD_AUTHOR_COMMAND, SHOW_ALL_ARTICLES_COMMAND,
- SHOW_ALL_AUTHORS_COMMAND, SHOW_ARTICLES_BY_AUTHOR_COMMAND, EXIT_COMMAND) = commands.keys()
+ SHOW_ALL_AUTHORS_COMMAND, SHOW_ARTICLES_BY_AUTHOR_COMMAND, CHANGE_AUTHOR_NAME_COMMAND, EXIT_COMMAND) = commands.keys()
 
 news_portal = NewsPortal()
 
@@ -58,6 +59,14 @@ while is_program_running:
         elif user_number == SHOW_ARTICLES_BY_AUTHOR_COMMAND:
             user_author_name = input('Укажите имя автора для поиска: ')
             news_portal.show_articles_by_author(user_author_name)
+
+        elif user_number == CHANGE_AUTHOR_NAME_COMMAND:
+            user_author_name = input('Укажите автора, чье имя хотели бы изменить: ')
+            user_password = input('Введите пароль: ')
+            user_author_new_name = input('Укажите новое имя автора: ')
+            success, message = news_portal.rename_author_with_password(user_author_name, user_password, user_author_new_name)
+            print(message)
+
         elif user_number == EXIT_COMMAND:
 
             print()
