@@ -18,6 +18,7 @@ class Author:
         return self.__name
 
     def __is_valid_name(self, name: str) -> bool:
+
         if isinstance(name, str):
             if name.strip():
                 return True
