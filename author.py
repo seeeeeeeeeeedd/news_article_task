@@ -1,6 +1,3 @@
-from news_article import NewsArticle
-
-
 class Author:
     def __init__(self, name: str, password: str):
 
@@ -14,6 +11,8 @@ class Author:
         self.__password = password
 
     def create_article(self, title: str, content: str):
+        from news_article import NewsArticle
+
         article = NewsArticle(title, content, self)
         return article
 
