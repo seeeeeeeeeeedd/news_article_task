@@ -2,7 +2,8 @@ from news_article import NewsArticle
 
 
 class Author:
-    def __init__(self, name: str):
+    def __init__(self, name: str, password: str):
+
         is_valid = self.__is_valid_name(name)
 
         if is_valid:
@@ -10,9 +11,16 @@ class Author:
         else:
             self.__name = 'Неизвестный автор'
 
+        self.__password = password
+
     def create_article(self, title: str, content: str):
         article = NewsArticle(title, content, self)
         return article
+
+    def verify_password(self, password: str):
+        if self.__password != password:
+            return False
+        return True
 
     def get_name(self) -> str:
         return self.__name
