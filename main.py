@@ -35,7 +35,8 @@ while is_program_running:
             current_author = news_portal.find_author_by_name(user_author_name)
 
             if current_author == None:
-                current_author = Author(user_author_name)
+                user_password = input('Придумайте пароль: ')
+                current_author = Author(user_author_name, user_password)
                 news_portal.add_author(current_author)
             user_article_title = input('Укажите название статьи: ')
             user_article_content = input('Укажите текст статьи: ')
@@ -47,7 +48,8 @@ while is_program_running:
             current_author = news_portal.find_author_by_name(user_author_name)
 
             if current_author == None:
-                current_author = Author(user_author_name)
+                user_password = input('Придумайте пароль: ')
+                current_author = Author(user_author_name, user_password)
                 news_portal.add_author(current_author)
                 print('Автор успешно добавлен')
             else:
