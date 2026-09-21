@@ -64,12 +64,16 @@ while is_program_running:
 
         elif user_number == CHANGE_AUTHOR_NAME_COMMAND:
             user_author_name = input('Укажите автора, чье имя хотели бы изменить: ')
-            user_password = input('Введите пароль: ')
-            user_author_new_name = input('Укажите новое имя автора: ')
-            success, message = news_portal.rename_author_with_password(user_author_name, user_password,
-                                                                       user_author_new_name)
-            print(message)
+            author = news_portal.find_author_by_name(user_author_name)
 
+            if not author:
+                print('Автор не найден')
+            else:
+                user_password = input('Введите пароль: ')
+                user_author_new_name = input('Укажите новое имя автора: ')
+                success, message = news_portal.rename_author_with_password(user_author_name, user_password,
+                                                                           user_author_new_name)
+                print(message)
         elif user_number == EXIT_COMMAND:
 
             print()
