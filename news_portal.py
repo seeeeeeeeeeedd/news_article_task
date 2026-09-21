@@ -62,6 +62,29 @@ class NewsPortal:
         if not is_article_found:
             print('Совпадений не найдено')
 
+    def rename_author_with_password(self, author_name, password, new_name) -> tuple[bool, str]:
+        author = self.find_author_by_name(author_name)
+
+        if not author:
+            return (False, 'Автор не найден')
+
+        correct_password = author.verify_password(password)
+
+        if not correct_password:
+            return (False, 'Неверный пароль')
+
+        current_name = author.get_name()
+
+        if current_name.lower() == new_name.lower():
+            return (False, 'Новое имя совпадает со старым')
+
+        success_rename_result = author.change_name(new_name)
+
+        if not success_rename_result:
+            return (False, 'Некорректное имя')
+
+        return (True, 'Имя успешно изменено')
+
     def __is_valid_author(self, author):
         return isinstance(author, Author)
 
