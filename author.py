@@ -22,6 +22,15 @@ class Author:
             return False
         return True
 
+    def change_name(self, new_name: str) -> bool:
+        is_valid = self.__is_valid_name(new_name)
+
+        if is_valid:
+            self.__name = new_name.title()
+            return True
+        else:
+            return False
+
     def get_name(self) -> str:
         return self.__name
 
