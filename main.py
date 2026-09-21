@@ -28,23 +28,23 @@ while is_program_running:
     if user_number in commands.keys():
         if user_number == CREATE_AND_PUBLISH_ARTICLE_COMMAND:
             user_author_name = input('Укажите имя автора: ')
-            current_author_name = news_portal.find_author_by_name(user_author_name)
+            current_author = news_portal.find_author_by_name(user_author_name)
 
-            if current_author_name == None:
-                current_author_name = Author(user_author_name)
-                news_portal.add_author(current_author_name)
+            if current_author == None:
+                current_author = Author(user_author_name)
+                news_portal.add_author(current_author)
             user_article_title = input('Укажите название статьи: ')
 
-            article = current_author_name.create_article(user_article_title)
+            article = current_author.create_article(user_article_title)
             news_portal.publish_article(article)
 
         elif user_number == ADD_AUTHOR_COMMAND:
             user_author_name = input('Укажите имя автора: ')
-            current_author_name = news_portal.find_author_by_name(user_author_name)
+            current_author = news_portal.find_author_by_name(user_author_name)
 
-            if current_author_name == None:
-                current_author_name = Author(user_author_name)
-                news_portal.add_author(current_author_name)
+            if current_author == None:
+                current_author = Author(user_author_name)
+                news_portal.add_author(current_author)
                 print()
                 print('Автор успешно добавлен')
             else:
