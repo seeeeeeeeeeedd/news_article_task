@@ -10,8 +10,8 @@ class Author:
         else:
             self.__name = 'Неизвестный автор'
 
-    def create_article(self, title: str):
-        article = NewsArticle(title, self)
+    def create_article(self, title: str, content: str):
+        article = NewsArticle(title, content, self)
         return article
 
     def get_name(self) -> str:
