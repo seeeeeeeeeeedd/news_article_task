@@ -3,9 +3,11 @@ from author import Author
 
 class NewsArticle:
     def __init__(self, title: str, content: str, author: Author):
-        is_valid = self.__is_valid_title_and_author(title, author)
+        is_title_valid = self.__is_text_valid(title)
+        is_content_valid = self.__is_text_valid(content)
+        is_author_valid = self.__is_author_valid(author)
 
-        if is_valid:
+        if is_title_valid and is_content_valid and is_author_valid:
             self.__title = title.capitalize()
             self.__content = content
             self.__author = author
