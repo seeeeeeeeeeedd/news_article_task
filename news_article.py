@@ -23,8 +23,16 @@ class NewsArticle:
     def get_author(self):
         return self.__author
 
-    def __is_valid_title_and_author(self, title: str, author: Author) -> bool:
-        if isinstance(title, str) and isinstance(author, Author):
-            if title.strip() and author.get_name():
-                return True
-        return False
+    def __is_text_valid(self, text) -> bool:
+        if not isinstance(text, str):
+            return False
+        if not text.strip():
+            return False
+        return True
+
+    def __is_author_valid(self, author) -> bool:
+        if not isinstance(author, Author):
+            return False
+        if not author.get_name():
+            return False
+        return True
