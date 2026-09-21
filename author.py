@@ -11,7 +11,7 @@ class Author:
             self.__name = 'Неизвестный автор'
 
     def create_article(self, title: str):
-        article = NewsArticle(title, self.get_name())
+        article = NewsArticle(title, self)
         return article
 
     def get_name(self) -> str:
