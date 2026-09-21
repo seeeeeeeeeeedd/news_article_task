@@ -24,7 +24,6 @@ class NewsArticle:
         return self.__author
 
     def __is_valid_title_and_author(self, title: str, author: Author) -> bool:
-
         if isinstance(title, str) and isinstance(author, Author):
             if title.strip() and author.get_name():
                 return True
