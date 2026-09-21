@@ -34,8 +34,9 @@ while is_program_running:
                 current_author = Author(user_author_name)
                 news_portal.add_author(current_author)
             user_article_title = input('Укажите название статьи: ')
+            user_article_content = input('Укажите текст статьи: ')
 
-            article = current_author.create_article(user_article_title)
+            article = current_author.create_article(user_article_title, user_article_content)
             news_portal.publish_article(article)
 
         elif user_number == ADD_AUTHOR_COMMAND:
