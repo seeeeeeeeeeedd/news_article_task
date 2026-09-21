@@ -10,6 +10,10 @@ class Author:
         else:
             self.__name = 'Неизвестный автор'
 
+    def create_article(self, title: str):
+        article = NewsArticle(title, self.get_name())
+        return article
+
     def get_name(self) -> str:
         return self.__name
 
@@ -18,7 +22,3 @@ class Author:
             if name.strip():
                 return True
         return False
-
-    def create_article(self, title: str):
-        article = NewsArticle(title, self.get_name())
-        return article
