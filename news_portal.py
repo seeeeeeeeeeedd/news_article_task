@@ -7,7 +7,7 @@ class NewsPortal:
         self.__published_articles = []
         self.__authors = []
 
-    def publish_article(self, author, title, content):
+    def publish_article(self, author: Author, title: str, content: str):
         is_valid_author = self.__is_valid_author(author)
 
         if is_valid_author:
@@ -18,7 +18,6 @@ class NewsPortal:
             self.__published_articles.append(article)
         else:
             print('Ошибка. Некорректные данные')
-            return
 
     def show_published_articles(self):
         for article in self.__published_articles:
@@ -31,7 +30,7 @@ class NewsPortal:
             current_author = author.get_name()
             print(f'Автор: {current_author}')
 
-    def add_author(self, author):
+    def add_author(self, author: Author):
         is_valid_author = self.__is_valid_author(author)
 
         if is_valid_author:
@@ -48,7 +47,7 @@ class NewsPortal:
                 return author
         return None
 
-    def show_articles_by_author(self, search_author):
+    def show_articles_by_author(self, search_author: str):
         is_article_found = False
 
         for article in self.__published_articles:
@@ -62,7 +61,7 @@ class NewsPortal:
         if not is_article_found:
             print('Совпадений не найдено')
 
-    def rename_author_with_password(self, author_name, password, new_name) -> tuple[bool, str]:
+    def rename_author_with_password(self, author_name: str, password: str, new_name: str) -> tuple[bool, str]:
         author = self.find_author_by_name(author_name)
 
         if not author:
@@ -85,8 +84,8 @@ class NewsPortal:
 
         return (True, 'Имя успешно изменено')
 
-    def __is_valid_author(self, author):
+    def __is_valid_author(self, author: Author) -> bool:
         return isinstance(author, Author)
 
-    def __is_valid_article(self, article):
+    def __is_valid_article(self, article: NewsArticle) -> bool:
         return isinstance(article, NewsArticle)
