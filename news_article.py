@@ -22,8 +22,8 @@ class NewsArticle:
     def get_content(self):
         return self.__content
 
-    def get_author(self):
-        return self.__author
+    def get_author_name(self):
+        return self.__author.get_name()
 
     def __is_text_valid(self, text) -> bool:
         if not isinstance(text, str):
