@@ -16,25 +16,27 @@ class NewsArticle:
             self.__content = 'Содержание отсутствует'
             self.__author = Author('Неизвестный автор')
 
-    def get_title(self):
+    def get_title(self) -> str:
         return self.__title
 
-    def get_content(self):
+    def get_content(self) -> str:
         return self.__content
 
-    def get_author_name(self):
+    def get_author_name(self) -> str:
         return self.__author.get_name()
 
-    def __is_text_valid(self, text) -> bool:
+    def __is_text_valid(self, text: str) -> bool:
         if not isinstance(text, str):
             return False
         if not text.strip():
             return False
+
         return True
 
-    def __is_author_valid(self, author) -> bool:
+    def __is_author_valid(self, author: Author) -> bool:
         if not isinstance(author, Author):
             return False
         if not author.get_name():
             return False
+
         return True
