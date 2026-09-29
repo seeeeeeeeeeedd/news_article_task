@@ -1,3 +1,6 @@
+from news_article import NewsArticle
+
+
 class Author:
     def __init__(self, name: str, password: str):
 
@@ -10,16 +13,15 @@ class Author:
 
         self.__password = password
 
-    def create_article(self, title: str, content: str):
+    def create_article(self, title: str, content: str) -> NewsArticle:
         from news_article import NewsArticle
 
         article = NewsArticle(title, content, self)
+
         return article
 
-    def verify_password(self, password: str):
-        if self.__password != password:
-            return False
-        return True
+    def verify_password(self, password: str) -> bool:
+        return self.__password == password
 
     def change_name(self, new_name: str) -> bool:
         is_valid = self.__is_valid_name(new_name)
@@ -38,4 +40,5 @@ class Author:
         if isinstance(name, str):
             if name.strip():
                 return True
+
         return False
