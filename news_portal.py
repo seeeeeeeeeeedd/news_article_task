@@ -22,7 +22,7 @@ class NewsPortal:
     def show_published_articles(self):
         for article in self.__published_articles:
             current_title = article.get_title()
-            current_author = article.get_author().get_name()
+            current_author = article.get_author_name()
             print(f'Статья "{current_title}", автор - {current_author}')
 
     def show_authors(self):
@@ -52,7 +52,7 @@ class NewsPortal:
         is_article_found = False
 
         for article in self.__published_articles:
-            current_author_name = article.get_author().get_name()
+            current_author_name = article.get_author_name()
 
             if current_author_name.lower() == search_author.lower():
                 current_title = article.get_title()
