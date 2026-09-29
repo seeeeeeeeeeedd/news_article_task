@@ -45,6 +45,7 @@ class NewsPortal:
 
             if current_author_name.lower() == name.lower():
                 return author
+
         return None
 
     def show_articles_by_author(self, search_author: str):
